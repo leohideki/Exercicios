@@ -4,8 +4,11 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import Model.Pais;
+import DAO.ConnectionFactory;
+
 public class PaisDAO {
 	public int criar(Pais pais) {
 		String sqlInsert = "INSERT INTO pais(nome, populacao, area) VALUES (?, ?, ?)";
@@ -131,5 +134,56 @@ public class PaisDAO {
 			System.out.println(e);
 		}
 		return vetorTresPais;
+	}
+	
+	public ArrayList<Pais> listarPaises() {
+		Pais pais;
+		ArrayList<Pais> lista = new ArrayList<>();
+		String sqlSelect = "SELECT id, nome, populacao, area FROM pais";
+		// usando o try with resources do Java 7, que fecha o que abriu
+		try (Connection conn = ConnectionFactory.obtemConexao();
+				PreparedStatement stm = conn.prepareStatement(sqlSelect);) {
+			try (ResultSet rs = stm.executeQuery();) {
+				while (rs.next()) {
+					pais = new Pais();
+					pais.setId(rs.getInt("id"));
+					pais.setNome(rs.getString("nome"));
+					pais.setPopulacao(rs.getLong("populacao"));
+					pais.setArea(rs.getDouble("area"));
+					lista.add(pais);
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		} catch (SQLException e1) {
+			System.out.print(e1.getStackTrace());
+		}
+		return lista;
+	}
+
+	public ArrayList<Pais> listarPaises(String chave) {
+		Pais pais;
+		ArrayList<Pais> lista = new ArrayList<>();
+		String sqlSelect = "SELECT id, nome, populacao, area FROM pais where upper(nome) like ?";
+		// usando o try with resources do Java 7, que fecha o que abriu
+		try (Connection conn = ConnectionFactory.obtemConexao();
+				PreparedStatement stm = conn.prepareStatement(sqlSelect);) {
+			stm.setString(1, "%" + chave.toUpperCase() + "%");
+			try (ResultSet rs = stm.executeQuery();) {
+				while (rs.next()) {
+					pais = new Pais();
+					pais.setId(rs.getInt("id"));
+					pais.setNome(rs.getString("nome"));
+					pais.setPopulacao(rs.getLong("populacao"));
+					pais.setArea(rs.getDouble("area"));
+					lista.add(pais);
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		} catch (SQLException e1) {
+			System.out.print(e1.getStackTrace());
+		}
+		return lista;
 	}
 }

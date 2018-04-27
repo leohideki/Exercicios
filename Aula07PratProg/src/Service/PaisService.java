@@ -1,7 +1,10 @@
 package Service;
 
+import java.util.ArrayList;
+
 import DAO.PaisDAO;
 import Model.Pais;
+
 
 public class PaisService {
 	PaisDAO dao = new PaisDAO();
@@ -33,5 +36,6 @@ public class PaisService {
 	public String[] vetorTresPaises(Pais pais) {
 		return dao.vetorTresPaises();
 	}
+	
 	
 }
