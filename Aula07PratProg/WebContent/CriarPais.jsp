@@ -17,7 +17,7 @@
 	<c:import url="Menu.jsp"/>
     <div id="main" class="container">
         <h3 class="page-header">Incluir Pais</h3>
-        <form action="ManterPais.do" method="post">
+        <form action="controller.do" method="post">
             <div class="row">
                 <div class="form-group col-md-12">
                     <label for="nome">Nome</label>
@@ -38,7 +38,7 @@
             <hr />
             <div id="actions" class="row">
                 <div class="col-md-12">
-                    <button type="submit" class="btn btn-primary" name="acao" value="Criar">Salvar</button>
+                    <button type="submit" class="btn btn-primary" name="command" value="CriarPais">Salvar</button>
                     <a href="index.jsp" class="btn btn-default">Cancelar</a>
                 </div>
             </div>
