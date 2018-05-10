@@ -8,6 +8,8 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.io.IOException;
+
 import org.junit.FixMethodOrder;
 import org.junit.runners.MethodSorters;
 
@@ -51,7 +53,7 @@ public class PaisTeste {
 	}
 	
 	@Test
-	public void test00Carregar() {
+	public void test00Carregar() throws IOException{
 		System.out.println("carregar");
 		Pais fixture = new Pais();
 		fixture.setId(1);
@@ -64,7 +66,7 @@ public class PaisTeste {
 	}
 
 	@Test
-	public void test01Criar() {
+	public void test01Criar() throws IOException{
 		System.out.println("criar");
 		id = paisService.criar(pais);
 		System.out.println(id);
@@ -73,7 +75,7 @@ public class PaisTeste {
 	}
 
 	@Test
-	public void test02Atualizar() {
+	public void test02Atualizar() throws IOException{
 		System.out.println("atualizar");
 		pais.setPopulacao(101010);
 		copia.setArea(202020.00);		
@@ -83,7 +85,7 @@ public class PaisTeste {
 	}
 
 	@Test
-	public void test03Excluir() {
+	public void test03Excluir() throws IOException{
 		System.out.println("excluir");
 		copia.setId(-1);
 		copia.setNome(null);

@@ -23,7 +23,7 @@ public class CriarPais implements Command{
 		String pArea = request.getParameter("area");
 		int id = -1;
 		long populacao = 0;
-		double area = 0.00;
+		double area = 0;
 		try {
 			id = Integer.parseInt(pId);
 			populacao = Long.parseLong(pPopulacao);
