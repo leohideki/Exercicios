@@ -13,9 +13,7 @@ import javax.servlet.annotation.WebFilter;
 
 import DAO.ConnectionFactory;
 
-/**
- * Servlet Filter implementation class ConnectionFilter
- */
+
 @WebFilter("/*")
 public class ConnectionFilter implements Filter {
 
