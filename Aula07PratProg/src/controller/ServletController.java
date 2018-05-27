@@ -39,7 +39,7 @@ public class ServletController extends HttpServlet {
 		doExecute(request,response);
 	}
 	
-	@Override
+	/*@Override
 	public void init(){
 		try {
 			ConnectionFactory.obtemConexao();
@@ -55,7 +55,7 @@ public class ServletController extends HttpServlet {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-	}
+	}*/
 
 
 }

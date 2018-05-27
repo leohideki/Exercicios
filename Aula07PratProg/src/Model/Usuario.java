@@ -6,22 +6,25 @@ public class Usuario implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private String username;
-	private String password;
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
+	private byte[] password;
+	
+	public Usuario(String username, byte[] password) {
+		this.username = username;
 		this.password = password;
 	}
-
 	public String getUsername() {
 		return username;
 	}
 
 	public void setUsername(String username) {
 		this.username = username;
+	}
+	public byte[] getPassword() {
+		return password;
+	}
+
+	public void setPassword(byte[] password) {
+		this.password = password;;
 	}
 
 	@Override

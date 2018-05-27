@@ -1,9 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %><!DOCTYPE html>
-<html lang="pt-br">
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %><!DOCTYPE html>
+<html >
 
 <head>
-    <meta charset="utf-8">
+    
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Cadastros</title>
@@ -24,13 +25,13 @@
 				<div class="form-group">
 					<div class="input-group col-md-4">
 					   <div class="input-group-addon"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></div> 
-					   <input type="text" name="username" id="username" class="form-control" maxlength="60" placeholder="login" required/>
+					   <input type="text" name="username" id="username" class="form-control"  placeholder="login" required/>
 					</div>
 				</div>
 				<div class="form-group">
 					<div class="input-group col-md-4">
 					   <div class="input-group-addon"><span class="glyphicon glyphicon-option-horizontal" aria-hidden="true"></span></div> 
-					   <input type="password" name="passwd" id="passwd" class="form-control" placeholder="Senha" required/>
+					   <input type="password" name="password" id="password" class="form-control" placeholder="Senha" required/>
 					</div>
 				</div>
 				</div>

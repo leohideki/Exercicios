@@ -39,7 +39,7 @@ public class LoginFilter implements Filter {
 		}
 
 		if (logado == null && !uri.equals(path + "/Login.jsp")
-				&& !comando.equals("FazerLogin")) {
+				&& !comando.equals("FazerLogin") && !comando.equals("CadastrarUsuario")) {
 			((HttpServletResponse) response).sendRedirect(path + "/Login.jsp");
 		} else {
 			// pass the request along the filter chain
